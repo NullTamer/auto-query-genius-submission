@@ -68,7 +68,7 @@ run.bat --mock-mode
 
 ```bash
 # Clone the repository
-git clone https://github.com/NullTamer/auto-query-genius-recruiter.git
+git clone https://github.com/NullTamer/auto-query-genius-submission.git
 cd auto-query-genius-recruiter
 
 # Install dependencies
