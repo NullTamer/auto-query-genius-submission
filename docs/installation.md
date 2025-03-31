@@ -56,7 +56,7 @@ If you prefer to install the components manually:
 
 ```bash
 # Clone the repository
-git clone https://github.com/NullTamer/auto-query-genius-recruiter.git
+git clone https://github.com/NullTamer/auto-query-genius-submission.git
 cd auto-query-genius-recruiter
 
 # Create a virtual environment (recommended)
