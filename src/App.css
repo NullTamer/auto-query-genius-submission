@@ -1,0 +1,298 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Cyberpunk theme additions */
+.neon-glow {
+  text-shadow: 0 0 5px #2DD4BF, 
+               0 0 10px #2DD4BF, 
+               0 0 20px #2DD4BF;
+}
+
+/* Light mode should not use text glow to avoid blurry text */
+:root:not(.dark) .neon-glow {
+  text-shadow: none !important;
+  color: #0F766E !important;
+  font-weight: 700;
+}
+
+.cyber-card {
+  box-shadow: 0 0 10px rgba(45, 212, 191, 0.2),
+              inset 0 0 20px rgba(45, 212, 191, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+/* Lighter card style for light mode */
+:root:not(.dark) .cyber-card {
+  box-shadow: 0 0 10px rgba(15, 118, 110, 0.15),
+              inset 0 0 10px rgba(15, 118, 110, 0.05);
+  border: 1px solid rgba(15, 118, 110, 0.2);
+  background-color: white;
+}
+
+.cyber-card:hover {
+  box-shadow: 0 0 15px rgba(45, 212, 191, 0.3),
+              inset 0 0 30px rgba(45, 212, 191, 0.15);
+}
+
+:root:not(.dark) .cyber-card:hover {
+  box-shadow: 0 0 15px rgba(15, 118, 110, 0.25),
+              inset 0 0 15px rgba(15, 118, 110, 0.1);
+}
+
+/* Terminal blinking cursor animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink::after {
+  content: '_';
+  animation: blink 1s infinite;
+  color: #2DD4BF;
+}
+
+/* Matrix-like scan effect */
+@keyframes matrix-scan {
+  0% { transform: translateY(-100%); opacity: 0.5; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+.matrix-scan::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: linear-gradient(to bottom, 
+                            rgba(45, 212, 191, 0.5),
+                            rgba(45, 212, 191, 0));
+  animation: matrix-scan 2s infinite linear;
+  z-index: 1;
+}
+
+/* Glitch effect */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.glitch-text:hover {
+  animation: glitch 0.3s infinite;
+  color: #F97316;
+}
+
+/* Sort order indicator styles */
+.sort-order-desc::after {
+  content: '↓';
+  margin-left: 2px;
+}
+
+.sort-order-asc::after {
+  content: '↑';
+  margin-left: 2px;
+}
+
+/* Improved category styles to match original design */
+.category-badge {
+  background-color: rgba(45, 212, 191, 0.2);
+  color: #2DD4BF;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+:root:not(.dark) .category-badge {
+  background-color: rgba(15, 118, 110, 0.1);
+  color: #0F766E;
+}
+
+/* Improved button styles to match original design */
+.filter-button {
+  background-color: #F97316;
+  color: white;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.filter-button:hover {
+  background-color: #EA580C;
+}
+
+.filter-button.inactive {
+  background-color: transparent;
+  color: #D1D5DB;
+  border: 1px solid #4B5563;
+}
+
+.filter-button.inactive:hover {
+  background-color: rgba(75, 85, 99, 0.2);
+}
+
+/* Keyword item styling in category view */
+.keyword-pill {
+  background-color: #2A3242;
+  border: 1px solid rgba(45, 212, 191, 0.3);
+  border-radius: 20px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+:root:not(.dark) .keyword-pill {
+  background-color: #F3F4F6;
+  border: 1px solid rgba(15, 118, 110, 0.3);
+}
+
+.keyword-pill:hover {
+  border-color: rgba(45, 212, 191, 0.6);
+  box-shadow: 0 0 8px rgba(45, 212, 191, 0.4);
+}
+
+:root:not(.dark) .keyword-pill:hover {
+  border-color: rgba(15, 118, 110, 0.6);
+  box-shadow: 0 0 8px rgba(15, 118, 110, 0.3);
+}
+
+.keyword-pill .percentage {
+  font-family: monospace;
+  color: #2DD4BF;
+  font-size: 0.75rem;
+  margin-left: auto;
+  margin-right: 8px;
+}
+
+:root:not(.dark) .keyword-pill .percentage {
+  color: #0F766E;
+}
+
+/* Category view styling to match screenshot */
+.category-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  background-color: rgba(45, 212, 191, 0.1);
+  border-left: 4px solid #2DD4BF;
+  border-radius: 4px;
+}
+
+:root:not(.dark) .category-header {
+  background-color: rgba(15, 118, 110, 0.1);
+  border-left: 4px solid #0F766E;
+}
+
+.category-header h3 {
+  color: #2DD4BF;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+:root:not(.dark) .category-header h3 {
+  color: #0F766E;
+}
+
+.category-header .count {
+  margin-left: 8px;
+  background-color: rgba(45, 212, 191, 0.2);
+  color: #2DD4BF;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+}
+
+:root:not(.dark) .category-header .count {
+  background-color: rgba(15, 118, 110, 0.2);
+  color: #0F766E;
+}
+
+/* Shadow effect for keyword items in category view */
+.shadow-glow {
+  box-shadow: 0 0 8px rgba(45, 212, 191, 0.4);
+}
+
+:root:not(.dark) .shadow-glow {
+  box-shadow: 0 0 8px rgba(15, 118, 110, 0.3);
+}
+
+/* Help Center specific styles */
+.help-content h1,
+.help-content h2,
+.help-content h3,
+.help-content h4,
+.help-content h5,
+.help-content h6,
+.help-content p,
+.help-content li,
+.help-content ul,
+.help-content ol {
+  text-align: left;
+}
+
+/* Fix for tooltip display issues */
+.radix-tooltip-content {
+  z-index: 9999 !important;
+  max-width: 300px !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Ensure tooltips have proper styling in light mode */
+:root:not(.dark) .radix-tooltip-content {
+  background-color: white !important;
+  color: #111827 !important;
+  border: 1px solid #E5E7EB !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}

@@ -1,0 +1,241 @@
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    /* Light mode variables */
+    --background: 180 15% 95%;
+    --foreground: 220 10% 10%;
+    --card: 180 15% 97%;
+    --card-foreground: 220 10% 12%;
+    --popover: 180 15% 97%;
+    --popover-foreground: 220 10% 12%;
+    --primary: 173 60% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 200 20% 96%;
+    --secondary-foreground: 220 10% 12%;
+    --muted: 200 20% 90%;
+    --muted-foreground: 220 5% 40%;
+    --accent: 173 60% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 13% 85%;
+    --input: 220 13% 85%;
+    --ring: 173 60% 40%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark mode variables - cyberpunk theme */
+    --background: 220 10% 10%;
+    --foreground: 0 0% 98%;
+    --card: 220 10% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 220 10% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 173 64% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 10% 15%;
+    --muted-foreground: 215.4 16.3% 70%;
+    --accent: 158 82% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 20%;
+    --input: 214.3 31.8% 20%;
+    --ring: 158 82% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .neon-glow {
+    text-shadow: 0 0 5px theme('colors.primary.DEFAULT'),
+                 0 0 10px theme('colors.primary.DEFAULT'),
+                 0 0 20px theme('colors.primary.DEFAULT');
+  }
+
+  /* Matrix background for dark mode */
+  .dark .matrix-bg {
+    background: linear-gradient(180deg, 
+      rgba(0, 20, 10, 0.95) 0%,
+      rgba(0, 10, 5, 0.98) 100%
+    );
+  }
+
+  /* Light mode matrix background */
+  .matrix-bg {
+    background: linear-gradient(180deg, 
+      rgba(240, 250, 255, 0.95) 0%,
+      rgba(230, 245, 255, 0.98) 100%
+    );
+  }
+
+  /* Cyber card styles for dark mode */
+  .dark .cyber-card {
+    @apply backdrop-blur-xl bg-secondary/80 border border-primary/20;
+    box-shadow: 0 0 10px theme('colors.primary.DEFAULT/0.2'),
+                inset 0 0 20px theme('colors.primary.DEFAULT/0.1');
+  }
+
+  /* Light mode cyber card */
+  .cyber-card {
+    @apply backdrop-blur-xl bg-white/90 border border-primary/30;
+    box-shadow: 0 0 10px theme('colors.primary.DEFAULT/0.3'),
+                inset 0 0 20px theme('colors.primary.DEFAULT/0.05');
+  }
+
+  .glitch {
+    animation: glitch 1s linear infinite;
+  }
+
+  @keyframes glitch {
+    2%, 64% {
+      transform: translate(2px, 0) skew(0deg);
+    }
+    4%, 60% {
+      transform: translate(-2px, 0) skew(0deg);
+    }
+    62% {
+      transform: translate(0, 0) skew(5deg);
+    }
+  }
+
+  .matrix-loader {
+    @apply relative overflow-hidden;
+    &::before {
+      content: '';
+      @apply absolute inset-0 bg-gradient-to-b from-primary/20 to-transparent;
+      animation: matrix-scan 2s linear infinite;
+    }
+  }
+
+  @keyframes matrix-scan {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(100%);
+    }
+  }
+
+  .data-stream {
+    animation: data-flow 0.5s ease-out;
+  }
+
+  @keyframes data-flow {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* New cyberpunk utilities */
+  .shadow-glow {
+    box-shadow: 0 0 8px theme('colors.primary.DEFAULT/0.6'),
+                0 0 15px theme('colors.primary.DEFAULT/0.4');
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 2px theme('colors.primary.DEFAULT'),
+                0 0 4px theme('colors.primary.DEFAULT/0.8');
+  }
+  
+  .border-glow {
+    @apply border border-primary;
+    box-shadow: 0 0 5px theme('colors.primary.DEFAULT/0.5'),
+                inset 0 0 3px theme('colors.primary.DEFAULT/0.5');
+  }
+  
+  .cyber-bg {
+    background: linear-gradient(135deg, 
+      rgba(26, 31, 44, 0.95) 0%,
+      rgba(33, 37, 46, 0.98) 100%
+    );
+  }
+  
+  .cyber-accent {
+    @apply bg-accent text-accent-foreground;
+    box-shadow: 0 0 10px theme('colors.accent.DEFAULT/0.5');
+  }
+}
+
+/* Fix to ensure tooltips are always on top */
+.radix-tooltip-content {
+  z-index: 50 !important;
+  max-width: 300px !important;
+  overflow-wrap: break-word !important;
+  width: auto !important;
+}
+
+/* Ensure tooltips have proper styling in light mode */
+:root:not(.dark) .radix-tooltip-content {
+  background-color: white !important;
+  color: #111827 !important;
+  border: 1px solid #E5E7EB !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Help center content alignment fixes */
+.help-content h1,
+.help-content h2,
+.help-content h3,
+.help-content h4,
+.help-content h5,
+.help-content h6,
+.help-content p,
+.help-content li,
+.help-content ul,
+.help-content ol {
+  text-align: left !important;
+}
+
+/* Fix specifically for numbered lists in guides and help center */
+.help-content ol,
+.help-content ul {
+  padding-left: 1.5rem !important;
+  margin-left: 0 !important;
+  text-align: left !important;
+  display: block !important;
+  list-style-position: outside !important;
+}
+
+.help-content ol li,
+.help-content ul li {
+  display: list-item !important;
+  text-align: left !important;
+  margin-bottom: 0.5rem !important;
+  list-style-position: outside !important;
+}
+
+/* Forced left alignment for help center */
+div[class*="ScrollArea"] .help-content * {
+  text-align: left !important;
+  max-width: 100% !important;
+}
+
+/* Fix for light mode headings - remove blurry text */
+:root:not(.dark) .neon-glow {
+  text-shadow: none !important;
+  color: theme('colors.primary.DEFAULT') !important;
+}

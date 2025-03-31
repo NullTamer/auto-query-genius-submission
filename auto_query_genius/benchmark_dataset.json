@@ -1,0 +1,83 @@
+
+[
+  {
+    "id": 1,
+    "text": "We are seeking a Data Scientist with strong Python skills to join our analytics team. The ideal candidate will have experience with machine learning algorithms, data visualization, and statistical analysis. Knowledge of libraries such as pandas, scikit-learn, and TensorFlow is essential. Must be able to communicate complex findings to non-technical stakeholders. Experience with SQL and cloud platforms (AWS/Azure) is a plus.",
+    "keywords": [
+      {"keyword": "Data Scientist", "importance": 5},
+      {"keyword": "Python", "importance": 5},
+      {"keyword": "machine learning", "importance": 4},
+      {"keyword": "pandas", "importance": 4},
+      {"keyword": "scikit-learn", "importance": 4},
+      {"keyword": "TensorFlow", "importance": 3},
+      {"keyword": "statistical analysis", "importance": 3},
+      {"keyword": "data visualization", "importance": 3},
+      {"keyword": "SQL", "importance": 2},
+      {"keyword": "AWS", "importance": 2},
+      {"keyword": "Azure", "importance": 2}
+    ]
+  },
+  {
+    "id": 2,
+    "text": "Software Engineer position available for a skilled developer with expertise in JavaScript and React. You will work on developing responsive web applications, implementing new features, and optimizing application performance. Candidates should have experience with modern frontend frameworks, RESTful APIs, and version control systems like Git. Familiarity with Node.js, TypeScript, and automated testing is highly desirable.",
+    "keywords": [
+      {"keyword": "Software Engineer", "importance": 5},
+      {"keyword": "JavaScript", "importance": 5},
+      {"keyword": "React", "importance": 5},
+      {"keyword": "web applications", "importance": 4},
+      {"keyword": "frontend", "importance": 4},
+      {"keyword": "RESTful APIs", "importance": 3},
+      {"keyword": "Git", "importance": 3},
+      {"keyword": "Node.js", "importance": 3},
+      {"keyword": "TypeScript", "importance": 3},
+      {"keyword": "automated testing", "importance": 2}
+    ]
+  },
+  {
+    "id": 3,
+    "text": "Elementary School Teacher needed for grades 3-5. Must be certified with at least 2 years of teaching experience. The successful candidate will develop and implement engaging lesson plans, assess student progress, and collaborate with parents and staff. Experience with differentiated instruction, classroom management, and educational technology is required. Spanish language skills are a plus.",
+    "keywords": [
+      {"keyword": "Elementary School Teacher", "importance": 5},
+      {"keyword": "certified", "importance": 5},
+      {"keyword": "teaching experience", "importance": 4},
+      {"keyword": "lesson plans", "importance": 4},
+      {"keyword": "classroom management", "importance": 4},
+      {"keyword": "differentiated instruction", "importance": 3},
+      {"keyword": "educational technology", "importance": 3},
+      {"keyword": "assess student progress", "importance": 3},
+      {"keyword": "Spanish", "importance": 2}
+    ]
+  },
+  {
+    "id": 4,
+    "text": "Marketing Manager position for an experienced professional to lead our digital marketing initiatives. Responsibilities include developing marketing strategies, managing social media campaigns, analyzing performance metrics, and collaborating with the sales team. Candidates should have experience with SEO, content marketing, email campaigns, and marketing automation tools. Proficiency with Adobe Creative Suite and Google Analytics is required.",
+    "keywords": [
+      {"keyword": "Marketing Manager", "importance": 5},
+      {"keyword": "digital marketing", "importance": 5},
+      {"keyword": "marketing strategies", "importance": 4},
+      {"keyword": "social media", "importance": 4},
+      {"keyword": "SEO", "importance": 4},
+      {"keyword": "content marketing", "importance": 3},
+      {"keyword": "email campaigns", "importance": 3},
+      {"keyword": "marketing automation", "importance": 3},
+      {"keyword": "Google Analytics", "importance": 3},
+      {"keyword": "Adobe Creative Suite", "importance": 2}
+    ]
+  },
+  {
+    "id": 5,
+    "text": "Registered Nurse needed for busy hospital emergency department. Must have current RN license and BLS/ACLS certifications. The ideal candidate will have 3+ years of emergency or critical care experience, strong assessment skills, and the ability to work in a fast-paced environment. Experience with electronic medical records and excellent communication skills are essential. Knowledge of triage protocols and trauma care is highly desirable.",
+    "keywords": [
+      {"keyword": "Registered Nurse", "importance": 5},
+      {"keyword": "RN license", "importance": 5},
+      {"keyword": "emergency department", "importance": 5},
+      {"keyword": "BLS", "importance": 4},
+      {"keyword": "ACLS", "importance": 4},
+      {"keyword": "critical care", "importance": 4},
+      {"keyword": "electronic medical records", "importance": 3},
+      {"keyword": "triage", "importance": 3},
+      {"keyword": "trauma care", "importance": 3},
+      {"keyword": "assessment skills", "importance": 3}
+    ]
+  }
+]
